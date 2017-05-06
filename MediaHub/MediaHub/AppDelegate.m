@@ -7,8 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "MHiTunesSearchViewModel.h"
+#import "MHiTunesSearchViewController.h"
+#import "SplitViewController.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) MHiTunesSearchViewModel *viewModel;
 
 @end
 
@@ -16,7 +21,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    // create split vc
+    UISplitViewController *splitVC = [[SplitViewController alloc] init];
+    // create list vc
+    UIViewController *vc = [self createInitialViewController];
+    // link splictVC with vc
+    UISplitViewController *originalSplictVC = (UISplitViewController *)self.window.rootViewController;
+    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:vc];
+    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:originalSplictVC.viewControllers.lastObject];
+    splitVC.viewControllers = @[nav1];
+    
+    // chagne rootVC's splict view.
+    self.window.rootViewController = splitVC;
+    
     return YES;
 }
 
@@ -47,5 +65,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+- (UIViewController *)createInitialViewController {
+
+    self.viewModel = [MHiTunesSearchViewModel new];
+    return [[MHiTunesSearchViewController alloc] initWithViewModel:self.viewModel];
+}
 
 @end

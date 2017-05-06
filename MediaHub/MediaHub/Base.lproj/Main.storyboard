@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Yxh-cm-1A1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Yxh-cm-1A1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -117,16 +117,34 @@
         <!--Root View Controller-->
         <scene sceneID="3XR-1W-n8E">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="hVw-YY-vP5" customClass="MHRootViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MHiTunesSearchViewController" clearsSelectionOnViewWillAppear="NO" id="hVw-YY-vP5" customClass="MHiTunesSearchViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jgz-Vh-Tf6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="d2k-1v-0NN">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="OjD-FL-Xnf">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCd-nm-dg9">
+                                    <rect key="frame" x="10" y="7" width="281" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZ0-UK-WGW">
+                                    <rect key="frame" x="299" y="7" width="48" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Search"/>
+                                </button>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rMu-0S-2JO">
+                                    <rect key="frame" x="271" y="12" width="20" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="150" id="J95-sW-tvr" customClass="MHListCell">
                                 <rect key="frame" x="0.0" y="72" width="375" height="150"/>
@@ -197,6 +215,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="peb-Sf-fXa"/>
+                    <connections>
+                        <outlet property="btnSearch" destination="qZ0-UK-WGW" id="8na-eY-tFD"/>
+                        <outlet property="loadingIndicator" destination="rMu-0S-2JO" id="DzJ-CD-YDT"/>
+                        <outlet property="searchTextField" destination="dCd-nm-dg9" id="iaI-Fo-5ti"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xaw-Hd-ArA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,7 +244,7 @@
         <!--Split View Controller-->
         <scene sceneID="2aC-J6-8tc">
             <objects>
-                <splitViewController id="Yxh-cm-1A1" sceneMemberID="viewController">
+                <splitViewController id="Yxh-cm-1A1" customClass="SplitViewController" sceneMemberID="viewController">
                     <connections>
                         <segue destination="mSg-kC-sfo" kind="relationship" relationship="masterViewController" id="BKi-V6-RcX"/>
                         <segue destination="PLB-cG-UIE" kind="relationship" relationship="detailViewController" id="AYp-K1-xMV"/>

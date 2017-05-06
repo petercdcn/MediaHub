@@ -6,24 +6,65 @@
 //  Copyright © 2017 ShifanW. All rights reserved.
 //
 
-#import "MHRootViewController.h"
+#import "MHiTunesSearchViewController.h"
 #import "MHListCell.h"
 #import "MHListItem.h"
 #import "MHListItems.h"
 
-@interface MHRootViewController ()
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "UISearchBar+RAC.h"
 
+@interface MHiTunesSearchViewController ()
+
+@property (weak, nonatomic)MHiTunesSearchViewModel *viewModel;
 @property (nonatomic, strong) MHListItems * listItems;
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property (weak, nonatomic) IBOutlet UIButton *btnSearch;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
+
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
-@implementation MHRootViewController
+@implementation MHiTunesSearchViewController
+
+- (instancetype)initWithViewModel:(MHiTunesSearchViewModel *)viewModel {
+    self = [super init];
+    if (self) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self = [sb instantiateViewControllerWithIdentifier:@"MHiTunesSearchViewController"];
+        _viewModel = viewModel;
+    }
+
+
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.listItems = [self generateData];
+//    self.listItems = [self generateData];
+
+    [self bindViewModel];
+}
+
+- (void)bindViewModel {
+    self.title = self.viewModel.title;
+    self.searchTextField.text = self.viewModel.searchText;
+
+    RAC(self.viewModel, searchText) = self.searchTextField.rac_textSignal;
+
+    self.btnSearch.rac_command = self.viewModel.executeSearch;
+
+    RAC([UIApplication sharedApplication], networkActivityIndicatorVisible) = self.viewModel.executeSearch.executing;
+    RAC(self.loadingIndicator, hidden) = [self.viewModel.executeSearch.executing not];
+
+    [self.viewModel.executeSearch.executionSignals
+            subscribeNext:^(id x) {
+                [self.searchTextField resignFirstResponder];
+            }];
 }
 
 # pragma mark - UITableViewDatasource
