@@ -3,9 +3,10 @@
 // Copyright (c) 2017 ShifanW. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "MHiTunesSearch.h"
 
 
 @interface MHiTunesSearchImp : NSObject <MHiTunesSearch>
+
 @end

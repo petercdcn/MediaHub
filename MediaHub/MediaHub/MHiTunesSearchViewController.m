@@ -8,8 +8,8 @@
 
 #import "MHiTunesSearchViewController.h"
 #import "MHListCell.h"
-#import "MHListItem.h"
-#import "MHListItems.h"
+#import "MHiTunesItem.h"
+#import "MHiTunesSearchResults.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "UISearchBar+RAC.h"
@@ -17,7 +17,7 @@
 @interface MHiTunesSearchViewController ()
 
 @property (weak, nonatomic)MHiTunesSearchViewModel *viewModel;
-@property (nonatomic, strong) MHListItems * listItems;
+@property (nonatomic, strong) MHiTunesSearchResults * listItems;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @property (weak, nonatomic) IBOutlet UIButton *btnSearch;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
@@ -76,7 +76,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.listItems.count;
+    return self.listItems.totalResults;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -133,26 +133,26 @@
 
 #pragma Help method..Will be removed
 
-- (MHListItems * )generateData {
+- (MHiTunesSearchResults * )generateData {
     
-    MHListItems * listItems = [MHListItems new];
+    MHiTunesSearchResults * listItems = [MHiTunesSearchResults new];
     
-    MHListItem * item1 = [MHListItem new];
+    MHiTunesItem * item1 = [MHiTunesItem new];
     item1.artistName = @"Jack Johnson";
     item1.primaryGenreName = @"Concert Films";
     
     
-    MHListItem * item2 = [MHListItem new];
+    MHiTunesItem * item2 = [MHiTunesItem new];
     item2.artistName = @"Jack Johnson";
     item2.primaryGenreName = @"Music Documentaries";
     
-    MHListItem * item3 = [MHListItem new];
+    MHiTunesItem * item3 = [MHiTunesItem new];
     item3.artistName = @"Jack Johnson";
     item3.primaryGenreName = @"Action & Adventure";
     
     NSMutableArray * items = [[NSMutableArray alloc] initWithObjects:item1, item2, item3, nil];
     
-    listItems.count = 3;
+    listItems.totalResults = 3;
     listItems.mhItems = items;
     
     return listItems;

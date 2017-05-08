@@ -11,10 +11,11 @@
 		58EEF54A1EB5513E00D8B10B /* MHDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58EEF5491EB5513E00D8B10B /* MHDetailViewController.m */; };
 		58EEF54E1EB5568F00D8B10B /* MHPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58EEF54D1EB5568F00D8B10B /* MHPlayerViewController.m */; };
 		58F06A8A1EB52F0700F491FB /* MHListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F06A891EB52F0700F491FB /* MHListCell.m */; };
-		58F06A8E1EB537C500F491FB /* MHListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F06A8D1EB537C500F491FB /* MHListItem.m */; };
-		58F06A911EB5384100F491FB /* MHListItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F06A901EB5384100F491FB /* MHListItems.m */; };
+		58F06A8E1EB537C500F491FB /* MHiTunesItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F06A8D1EB537C500F491FB /* MHiTunesItem.m */; };
+		58F06A911EB5384100F491FB /* MHiTunesSearchResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F06A901EB5384100F491FB /* MHiTunesSearchResults.m */; };
 		7ADC144291E61F075B1B35F1 /* MHiTunesSearchImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC1D56C94B34C127E63E96 /* MHiTunesSearchImp.m */; };
 		7ADC1790E592E273A8EB2591 /* UISearchBar+RAC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADC1D26529B792D27B64378 /* UISearchBar+RAC.m */; };
+		CA282007EF923FB61C986D70 /* MHViewModelServicesImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2820843C355B81FE289034 /* MHViewModelServicesImpl.m */; };
 		CF2ACAA01EBCD540000B9DB5 /* MHiTunesSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2ACA9F1EBCD540000B9DB5 /* MHiTunesSearchViewModel.m */; };
 		CF2ACAE81EBCF27C000B9DB5 /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2ACAE71EBCF27C000B9DB5 /* SplitViewController.m */; };
 		CFA1FE601EB529FB002BCFF1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA1FE5F1EB529FB002BCFF1 /* main.m */; };
@@ -51,10 +52,10 @@
 		58EEF54D1EB5568F00D8B10B /* MHPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHPlayerViewController.m; sourceTree = "<group>"; };
 		58F06A881EB52F0700F491FB /* MHListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHListCell.h; sourceTree = "<group>"; };
 		58F06A891EB52F0700F491FB /* MHListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHListCell.m; sourceTree = "<group>"; };
-		58F06A8C1EB537C500F491FB /* MHListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHListItem.h; sourceTree = "<group>"; };
-		58F06A8D1EB537C500F491FB /* MHListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHListItem.m; sourceTree = "<group>"; };
-		58F06A8F1EB5384100F491FB /* MHListItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHListItems.h; sourceTree = "<group>"; };
-		58F06A901EB5384100F491FB /* MHListItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHListItems.m; sourceTree = "<group>"; };
+		58F06A8C1EB537C500F491FB /* MHiTunesItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHiTunesItem.h; sourceTree = "<group>"; };
+		58F06A8D1EB537C500F491FB /* MHiTunesItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHiTunesItem.m; sourceTree = "<group>"; };
+		58F06A8F1EB5384100F491FB /* MHiTunesSearchResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHiTunesSearchResults.h; sourceTree = "<group>"; };
+		58F06A901EB5384100F491FB /* MHiTunesSearchResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHiTunesSearchResults.m; sourceTree = "<group>"; };
 		73EE72F1822A3074F47883AC /* Pods_MediaHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADC13EF3C2A8F11E92AB763 /* MHiTunesSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHiTunesSearch.h; sourceTree = "<group>"; };
 		7ADC13F7E268B2A64B253FDA /* UISearchBar+RAC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UISearchBar+RAC.h"; sourceTree = "<group>"; };
@@ -62,6 +63,9 @@
 		7ADC1D26529B792D27B64378 /* UISearchBar+RAC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UISearchBar+RAC.m"; sourceTree = "<group>"; };
 		7ADC1D56C94B34C127E63E96 /* MHiTunesSearchImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHiTunesSearchImp.m; sourceTree = "<group>"; };
 		892B5362104849D0087E7BD2 /* Pods-MediaHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaHub/Pods-MediaHub.release.xcconfig"; sourceTree = "<group>"; };
+		CA2820843C355B81FE289034 /* MHViewModelServicesImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHViewModelServicesImpl.m; sourceTree = "<group>"; };
+		CA2822E43619B463FE95C2F2 /* MHViewModelServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHViewModelServices.h; sourceTree = "<group>"; };
+		CA2828C825135C42B3DD11E3 /* MHViewModelServicesImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHViewModelServicesImpl.h; sourceTree = "<group>"; };
 		CF2ACA9E1EBCD540000B9DB5 /* MHiTunesSearchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHiTunesSearchViewModel.h; sourceTree = "<group>"; };
 		CF2ACA9F1EBCD540000B9DB5 /* MHiTunesSearchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHiTunesSearchViewModel.m; sourceTree = "<group>"; };
 		CF2ACAE61EBCF27C000B9DB5 /* SplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewController.h; sourceTree = "<group>"; };
@@ -136,10 +140,10 @@
 		58F06A8B1EB5376800F491FB /* MHListServiceModel */ = {
 			isa = PBXGroup;
 			children = (
-				58F06A8C1EB537C500F491FB /* MHListItem.h */,
-				58F06A8D1EB537C500F491FB /* MHListItem.m */,
-				58F06A8F1EB5384100F491FB /* MHListItems.h */,
-				58F06A901EB5384100F491FB /* MHListItems.m */,
+				58F06A8C1EB537C500F491FB /* MHiTunesItem.h */,
+				58F06A8D1EB537C500F491FB /* MHiTunesItem.m */,
+				58F06A8F1EB5384100F491FB /* MHiTunesSearchResults.h */,
+				58F06A901EB5384100F491FB /* MHiTunesSearchResults.m */,
 			);
 			name = MHListServiceModel;
 			sourceTree = "<group>";
@@ -156,8 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				7ADC13EF3C2A8F11E92AB763 /* MHiTunesSearch.h */,
-				7ADC1D56C94B34C127E63E96 /* MHiTunesSearchImp.m */,
 				7ADC19096967BF374C12F515 /* MHiTunesSearchImp.h */,
+				7ADC1D56C94B34C127E63E96 /* MHiTunesSearchImp.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +189,7 @@
 			children = (
 				CF2ACA9E1EBCD540000B9DB5 /* MHiTunesSearchViewModel.h */,
 				CF2ACA9F1EBCD540000B9DB5 /* MHiTunesSearchViewModel.m */,
+				CA2822E43619B463FE95C2F2 /* MHViewModelServices.h */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				CF2ACA9C1EBCD422000B9DB5 /* MHUtil */,
+				7ADC1D804CAB39C3292AB7CB /* Model */,
 				58F06A8B1EB5376800F491FB /* MHListServiceModel */,
 				CF2ACA9D1EBCD449000B9DB5 /* ViewModel */,
 				58F06A821EB52E3C00F491FB /* MHListScreen */,
@@ -228,7 +234,8 @@
 				CFA1FE6C1EB529FB002BCFF1 /* LaunchScreen.storyboard */,
 				CFA1FE6F1EB529FB002BCFF1 /* Info.plist */,
 				CFA1FE5E1EB529FB002BCFF1 /* Supporting Files */,
-				7ADC1D804CAB39C3292AB7CB /* Model */,
+				CA2820843C355B81FE289034 /* MHViewModelServicesImpl.m */,
+				CA2828C825135C42B3DD11E3 /* MHViewModelServicesImpl.h */,
 			);
 			path = MediaHub;
 			sourceTree = "<group>";
@@ -452,12 +459,13 @@
 				58EEF54A1EB5513E00D8B10B /* MHDetailViewController.m in Sources */,
 				CFA1FE631EB529FB002BCFF1 /* AppDelegate.m in Sources */,
 				58EEF54E1EB5568F00D8B10B /* MHPlayerViewController.m in Sources */,
-				58F06A911EB5384100F491FB /* MHListItems.m in Sources */,
+				58F06A911EB5384100F491FB /* MHiTunesSearchResults.m in Sources */,
 				CF2ACAE81EBCF27C000B9DB5 /* SplitViewController.m in Sources */,
-				58F06A8E1EB537C500F491FB /* MHListItem.m in Sources */,
+				58F06A8E1EB537C500F491FB /* MHiTunesItem.m in Sources */,
 				CFA1FE601EB529FB002BCFF1 /* main.m in Sources */,
 				7ADC1790E592E273A8EB2591 /* UISearchBar+RAC.m in Sources */,
 				7ADC144291E61F075B1B35F1 /* MHiTunesSearchImp.m in Sources */,
+				CA282007EF923FB61C986D70 /* MHViewModelServicesImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

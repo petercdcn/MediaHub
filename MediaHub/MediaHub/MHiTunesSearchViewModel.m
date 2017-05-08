@@ -8,16 +8,20 @@
 
 #import "MHiTunesSearchViewModel.h"
 
-#import <ReactiveCocoa/ReactiveCocoa.h>
+@interface MHiTunesSearchViewModel ()
 
+@property (nonatomic, weak) id<MHViewModelServices> services;
+
+@end
 
 @implementation MHiTunesSearchViewModel
 
 
-- (instancetype) init {
+- (instancetype) initWithService:(id<MHViewModelServices>)services {
     self = [super init];
     
     if (self) {
+        _services = services;
         [self initialize];
     }
     
@@ -38,18 +42,13 @@
         NSLog(@"Search text is more than 3 chars.  DoSearch: %@", x);
     }];
 
-    //TODO: delete this executeSearch command
     self.executeSearch = [[RACCommand alloc] initWithEnabled:validSearchSignal signalBlock:^RACSignal *(id input) {
         return [self executeSearchSignal];
     }];
 }
 
 - (RACSignal *)executeSearchSignal {
-    return [[[[RACSignal empty]
-            logAll]
-            delay:2.0]
-            logAll];
-
+    return [[self.services getiTunesSearchService] iTunesSearchSignal:self.searchText];
 }
 
 @end

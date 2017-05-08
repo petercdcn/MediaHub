@@ -11,9 +11,12 @@
 #import "MHiTunesSearchViewController.h"
 #import "SplitViewController.h"
 
+#import "MHViewModelServicesImpl.h"
+
 @interface AppDelegate ()
 
 @property (strong, nonatomic) MHiTunesSearchViewModel *viewModel;
+@property (strong, nonatomic) MHViewModelServicesImpl *viewModelServices;
 
 @end
 
@@ -29,10 +32,9 @@
     // link splictVC with vc
     UISplitViewController *originalSplictVC = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:vc];
-    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:originalSplictVC.viewControllers.lastObject];
     splitVC.viewControllers = @[nav1];
     
-    // chagne rootVC's splict view.
+        // chagne rootVC's splict view.
     self.window.rootViewController = splitVC;
     
     return YES;
@@ -67,8 +69,9 @@
 
 
 - (UIViewController *)createInitialViewController {
+    self.viewModelServices = [MHViewModelServicesImpl new];
+    self.viewModel = [[MHiTunesSearchViewModel alloc] initWithService:self.viewModelServices];
 
-    self.viewModel = [MHiTunesSearchViewModel new];
     return [[MHiTunesSearchViewController alloc] initWithViewModel:self.viewModel];
 }
 

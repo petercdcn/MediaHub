@@ -10,7 +10,7 @@
 
 @implementation MHListCell
 
-- (void)configureCell:(MHListItem * )listItem {
+- (void)configureCell:(MHiTunesItem * )listItem {
     
     self.title.text = listItem.artistName;
     self.type.text = listItem.primaryGenreName;

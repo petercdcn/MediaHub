@@ -1,5 +1,5 @@
 //
-//  MHListItem.h
+//  MHiTunesItem.h
 //  MediaHub
 //
 //  Created by Wu, Shifan on 5/1/17.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MHListItem : NSObject
+@interface MHiTunesItem : NSObject
 
 @property (nonatomic, strong) NSString * wrapperType;
 @property (nonatomic, strong) NSString * kind;

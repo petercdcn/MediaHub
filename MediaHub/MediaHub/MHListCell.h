@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MHListItem.h"
+#import "MHiTunesItem.h"
 
 @interface MHListCell : UITableViewCell
 
@@ -16,6 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *type;
 @property (weak, nonatomic) IBOutlet UILabel *year;
 
-- (void)configureCell:(MHListItem * )listItem;
+- (void)configureCell:(MHiTunesItem * )listItem;
 
 @end

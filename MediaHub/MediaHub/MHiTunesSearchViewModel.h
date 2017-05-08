@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "MHViewModelServices.h"
 
 @interface MHiTunesSearchViewModel : NSObject
 
@@ -15,5 +15,7 @@
 @property (strong, nonatomic) NSString *title;
 
 @property (strong, nonatomic) RACCommand *executeSearch;
+
+- (instancetype) initWithService:(id<MHViewModelServices>)services;
 
 @end
